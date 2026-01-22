@@ -81,7 +81,7 @@ const FeaturedContent = () => {
     url: string;
   } | null>(null);
   const [showHighlightsModal, setShowHighlightsModal] = useState(false);
-  const [activeHighlight, setActiveHighlight] = useState<string | null>(null);
+  const [playingHighlights, setPlayingHighlights] = useState<Set<number>>(new Set());
 
   const handleVideoClick = (video: typeof videos[0]) => {
     if (video.type === "highlights") {
@@ -91,8 +91,16 @@ const FeaturedContent = () => {
     }
   };
 
-  const handleHighlightClick = (url: string, index: number) => {
-    setActiveHighlight(url);
+  const toggleHighlightPlay = (index: number) => {
+    setPlayingHighlights(prev => {
+      const newSet = new Set(prev);
+      if (newSet.has(index)) {
+        newSet.delete(index);
+      } else {
+        newSet.add(index);
+      }
+      return newSet;
+    });
   };
 
   return (
@@ -160,53 +168,52 @@ const FeaturedContent = () => {
         </DialogContent>
       </Dialog>
 
-      {/* Highlights Grid Modal */}
+      {/* Highlights Grid Modal - Reel Style */}
       <Dialog open={showHighlightsModal} onOpenChange={(open) => {
         setShowHighlightsModal(open);
-        if (!open) setActiveHighlight(null);
+        if (!open) setPlayingHighlights(new Set());
       }}>
         <DialogContent className="max-w-5xl max-h-[90vh] overflow-y-auto">
-          <DialogHeader>
-            <DialogTitle>Highlights</DialogTitle>
+          <DialogHeader className="pb-2">
+            <DialogTitle className="text-primary italic">Interview Highlights</DialogTitle>
+            <p className="text-sm text-muted-foreground">Key moments and insights from the interview with Dan Wilkins</p>
           </DialogHeader>
           
-          <div className="space-y-4">
-            {/* Video Player */}
-            <div className="aspect-video w-full bg-muted rounded-lg overflow-hidden">
-              <iframe
-                src={getEmbedUrl(activeHighlight || defaultVideoUrls.highlights[0])}
-                title="Highlight"
-                className="w-full h-full border-0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
-            </div>
-
-            {/* Highlights Grid */}
-            <div className="grid grid-cols-3 gap-3">
-              {defaultVideoUrls.highlights.map((url, index) => (
+          <div className="grid grid-cols-3 gap-4 pt-4">
+            {defaultVideoUrls.highlights.map((url, index) => (
+              <div key={index} className="space-y-2">
+                <p className="text-sm font-medium text-center text-foreground">Highlight {index + 1}</p>
                 <div
-                  key={index}
-                  onClick={() => setActiveHighlight(url)}
-                  className={`aspect-video relative rounded-lg overflow-hidden cursor-pointer group bg-muted transition-all ${
-                    (activeHighlight || defaultVideoUrls.highlights[0]) === url 
-                      ? "ring-2 ring-primary" 
-                      : "hover:ring-2 hover:ring-primary/50"
-                  }`}
+                  className="aspect-video relative rounded-lg overflow-hidden bg-muted"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center">
-                    <div className="text-center">
-                      <div className="w-8 h-8 rounded-full bg-white/90 flex items-center justify-center mx-auto group-hover:scale-110 transition-transform shadow-lg">
-                        <Play className="w-3 h-3 text-[hsl(var(--cyber-pink))] ml-0.5" fill="currentColor" />
+                  {playingHighlights.has(index) ? (
+                    <iframe
+                      src={getEmbedUrl(url)}
+                      title={`Highlight ${index + 1}`}
+                      className="w-full h-full border-0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    />
+                  ) : (
+                    <div 
+                      onClick={() => toggleHighlightPlay(index)}
+                      className="absolute inset-0 cursor-pointer group"
+                    >
+                      <img
+                        src={highlightsImg}
+                        alt={`Highlight ${index + 1}`}
+                        className="w-full h-full object-cover"
+                      />
+                      <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
+                        <div className="w-14 h-14 rounded-full bg-white/90 flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg">
+                          <Play className="w-5 h-5 text-[hsl(var(--cyber-pink))] ml-0.5" fill="currentColor" />
+                        </div>
                       </div>
-                      <span className="text-xs font-medium text-foreground mt-1 block">
-                        {index + 1}
-                      </span>
                     </div>
-                  </div>
+                  )}
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
         </DialogContent>
       </Dialog>
