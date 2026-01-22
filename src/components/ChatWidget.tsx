@@ -51,12 +51,15 @@ const ChatWidget = () => {
         }),
       });
 
-      const data = await response.text();
+      const data = await response.json();
+      
+      // Extract the output field from the JSON response
+      const outputText = data.output || data.message || data.response || JSON.stringify(data);
       
       const assistantMessage: Message = {
         id: (Date.now() + 1).toString(),
         role: "assistant",
-        content: data || "Sorry, I couldn't process that request.",
+        content: outputText,
       };
 
       setMessages((prev) => [...prev, assistantMessage]);
@@ -88,12 +91,12 @@ const ChatWidget = () => {
           {/* Header */}
           <div className="gradient-card p-4 flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center">
-                <MessageCircle className="w-5 h-5 text-white" />
+              <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center text-xl">
+                👋
               </div>
               <div>
-                <h3 className="font-semibold text-white">Chat with us</h3>
-                <p className="text-white/80 text-sm">We typically reply instantly</p>
+                <h3 className="font-semibold text-white">Cyber Wins Assistant</h3>
+                <p className="text-white/80 text-sm">Ready to Score Your Next Win?</p>
               </div>
             </div>
             <button
