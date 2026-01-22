@@ -112,7 +112,7 @@ const ChatWidget = () => {
             {messages.length === 0 && (
               <div className="text-center text-muted-foreground py-8">
                 <MessageCircle className="w-12 h-12 mx-auto mb-3 opacity-50" />
-                <p>Start a conversation!</p>
+                <p>Ask me about the interview with Dan Wilkins</p>
               </div>
             )}
             {messages.map((message) => (

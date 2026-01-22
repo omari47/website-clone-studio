@@ -99,7 +99,7 @@ const DynamicChatWidget = ({ webhookUrl, guestName }: DynamicChatWidgetProps) =>
                 👋
               </div>
               <div>
-                <h3 className="font-semibold text-white">Ask about {guestName}</h3>
+                <h3 className="font-semibold text-white">Cyber Wins Assistant</h3>
                 <p className="text-white/80 text-sm">Ready to Score Your Next Win?</p>
               </div>
             </div>
@@ -116,7 +116,7 @@ const DynamicChatWidget = ({ webhookUrl, guestName }: DynamicChatWidgetProps) =>
             {messages.length === 0 && (
               <div className="text-center text-muted-foreground py-8">
                 <MessageCircle className="w-12 h-12 mx-auto mb-3 opacity-50" />
-                <p>Ask anything about {guestName}!</p>
+                <p>Ask me about the interview with {guestName}</p>
               </div>
             )}
             {messages.map((message) => (
