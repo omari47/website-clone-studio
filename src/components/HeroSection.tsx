@@ -39,15 +39,21 @@ const HeroSection = () => {
           </div>
 
           {/* Right Content - Profile Image */}
-          <div className="flex justify-center lg:justify-end relative">
-            <div className="relative">
-              <div className="w-72 h-72 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-accent/50 shadow-2xl">
+          <div className="flex justify-center lg:justify-end">
+            <div className="text-center">
+              <div className="w-72 h-72 lg:w-80 lg:h-80 rounded-full overflow-hidden border-4 border-accent/50 shadow-2xl mx-auto mb-6">
                 <img
                   src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face"
-                  alt="Mike D'Arezzo - Cybersecurity Leader"
+                  alt="Dan Wilkes - Cybersecurity Leader"
                   className="w-full h-full object-cover"
                 />
               </div>
+              <h3 className="text-2xl lg:text-3xl font-bold text-foreground mb-2">
+                Dan Wilkes
+              </h3>
+              <p className="text-muted-foreground text-lg">
+                Chief Information Security Officer
+              </p>
             </div>
           </div>
         </div>
