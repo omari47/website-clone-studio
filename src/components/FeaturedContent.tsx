@@ -185,7 +185,7 @@ const FeaturedContent = () => {
                 <p className="text-sm font-medium text-center text-foreground">Highlight {index + 1}</p>
                 <div
                   className="relative rounded-lg overflow-hidden bg-muted"
-                  style={{ aspectRatio: '1/2' }}
+                  style={{ aspectRatio: '3/4' }}
                 >
                   {playingHighlights.has(index) ? (
                     <iframe
