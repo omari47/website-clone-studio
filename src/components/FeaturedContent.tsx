@@ -14,7 +14,14 @@ import {
 const defaultVideoUrls = {
   fullInterview: "https://drive.google.com/file/d/1sNkpU4x0Fs6pzTn0XQSoeSHSmoynwvx8/preview",
   introVideo: "https://drive.google.com/file/d/1wTU5yxS_sjNu_EUrZqL4M4SCN6xpr8G8/preview",
-  highlights: "https://drive.google.com/file/d/1TnkKY4bKDaedWPmFHBopu8GiqwmDjxRO/preview",
+  highlights: [
+    "https://drive.google.com/file/d/1TnkKY4bKDaedWPmFHBopu8GiqwmDjxRO/preview",
+    "https://drive.google.com/file/d/16OwPYE6mXk-ZtgBmsFv4VULG3EINZAA6/preview",
+    "https://drive.google.com/file/d/1Gk8925D0lZBpT4zOWg6uQ3uDs39q1TC2/preview",
+    "https://drive.google.com/file/d/1iK69CW5ipWVqpPZMGzAN5m4GOY13bJQ0/preview",
+    "https://drive.google.com/file/d/1zL9HP4Ars9cbDz8mZenIJW1q-d1uAgDh/preview",
+    "https://drive.google.com/file/d/1rt3Nuqf2WoBgc9ekApbMhNXG9vBT7x4L/preview",
+  ],
 };
 
 // Convert URLs to embeddable format
@@ -48,6 +55,7 @@ const videos = [
     description: "Complete conversation with Dan Wilkins",
     thumbnail: fullInterviewImg,
     url: defaultVideoUrls.fullInterview,
+    type: "single" as const,
   },
   {
     id: 2,
@@ -55,13 +63,15 @@ const videos = [
     description: "Meet Dan Wilkins",
     thumbnail: introductionImg,
     url: defaultVideoUrls.introVideo,
+    type: "single" as const,
   },
   {
     id: 3,
     title: "Highlights",
     description: "Best moments from the interview",
     thumbnail: highlightsImg,
-    url: defaultVideoUrls.highlights,
+    url: "",
+    type: "highlights" as const,
   },
 ];
 
@@ -70,9 +80,19 @@ const FeaturedContent = () => {
     title: string;
     url: string;
   } | null>(null);
+  const [showHighlightsModal, setShowHighlightsModal] = useState(false);
+  const [activeHighlight, setActiveHighlight] = useState<string | null>(null);
 
-  const handleVideoClick = (title: string, url: string) => {
-    setActiveVideo({ title, url });
+  const handleVideoClick = (video: typeof videos[0]) => {
+    if (video.type === "highlights") {
+      setShowHighlightsModal(true);
+    } else {
+      setActiveVideo({ title: video.title, url: video.url });
+    }
+  };
+
+  const handleHighlightClick = (url: string, index: number) => {
+    setActiveHighlight(url);
   };
 
   return (
@@ -88,7 +108,7 @@ const FeaturedContent = () => {
             {videos.map((video) => (
               <div
                 key={video.id}
-                onClick={() => handleVideoClick(video.title, video.url)}
+                onClick={() => handleVideoClick(video)}
                 className="bg-card rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow cursor-pointer group"
               >
                 {/* Video Thumbnail */}
@@ -120,7 +140,7 @@ const FeaturedContent = () => {
         </div>
       </section>
 
-      {/* Video Modal */}
+      {/* Single Video Modal */}
       <Dialog open={!!activeVideo} onOpenChange={() => setActiveVideo(null)}>
         <DialogContent className="max-w-4xl p-0 overflow-hidden">
           <DialogHeader className="p-4 pb-0">
@@ -137,6 +157,59 @@ const FeaturedContent = () => {
               />
             )}
           </div>
+        </DialogContent>
+      </Dialog>
+
+      {/* Highlights Grid Modal */}
+      <Dialog open={showHighlightsModal} onOpenChange={(open) => {
+        setShowHighlightsModal(open);
+        if (!open) setActiveHighlight(null);
+      }}>
+        <DialogContent className="max-w-5xl max-h-[90vh] overflow-y-auto">
+          <DialogHeader>
+            <DialogTitle>Highlights</DialogTitle>
+          </DialogHeader>
+          
+          {activeHighlight ? (
+            <div className="space-y-4">
+              <button
+                onClick={() => setActiveHighlight(null)}
+                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+              >
+                ← Back to all highlights
+              </button>
+              <div className="aspect-video w-full">
+                <iframe
+                  src={getEmbedUrl(activeHighlight)}
+                  title="Highlight"
+                  className="w-full h-full border-0 rounded-lg"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              </div>
+            </div>
+          ) : (
+            <div className="grid grid-cols-3 gap-4">
+              {defaultVideoUrls.highlights.map((url, index) => (
+                <div
+                  key={index}
+                  onClick={() => handleHighlightClick(url, index)}
+                  className="aspect-video relative rounded-lg overflow-hidden cursor-pointer group bg-muted"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center">
+                    <div className="text-center">
+                      <div className="w-12 h-12 rounded-full bg-white/90 flex items-center justify-center mx-auto group-hover:scale-110 transition-transform shadow-lg">
+                        <Play className="w-5 h-5 text-[hsl(var(--cyber-pink))] ml-0.5" fill="currentColor" />
+                      </div>
+                      <span className="text-sm font-medium text-foreground mt-2 block">
+                        Highlight {index + 1}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
         </DialogContent>
       </Dialog>
     </>

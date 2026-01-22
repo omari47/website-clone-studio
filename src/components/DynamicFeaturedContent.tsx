@@ -44,6 +44,8 @@ const DynamicFeaturedContent = ({ guest }: DynamicFeaturedContentProps) => {
     title: string;
     url: string;
   } | null>(null);
+  const [showHighlightsModal, setShowHighlightsModal] = useState(false);
+  const [activeHighlight, setActiveHighlight] = useState<string | null>(null);
 
   const videos = [
     {
@@ -52,6 +54,7 @@ const DynamicFeaturedContent = ({ guest }: DynamicFeaturedContentProps) => {
       description: `Complete conversation with ${guest.name}`,
       thumbnail: fullInterviewImg,
       url: guest.fullInterview,
+      type: "single" as const,
     },
     {
       id: 2,
@@ -59,18 +62,28 @@ const DynamicFeaturedContent = ({ guest }: DynamicFeaturedContentProps) => {
       description: `Meet ${guest.name}`,
       thumbnail: introductionImg,
       url: guest.introVideo,
+      type: "single" as const,
     },
     {
       id: 3,
       title: "Highlights",
       description: "Best moments from the interview",
       thumbnail: highlightsImg,
-      url: guest.highlights[0] || "", // First highlight as default
+      url: "",
+      type: "highlights" as const,
     },
   ];
 
-  const handleVideoClick = (title: string, url: string) => {
-    setActiveVideo({ title, url });
+  const handleVideoClick = (video: typeof videos[0]) => {
+    if (video.type === "highlights") {
+      setShowHighlightsModal(true);
+    } else {
+      setActiveVideo({ title: video.title, url: video.url });
+    }
+  };
+
+  const handleHighlightClick = (url: string) => {
+    setActiveHighlight(url);
   };
 
   return (
@@ -86,7 +99,7 @@ const DynamicFeaturedContent = ({ guest }: DynamicFeaturedContentProps) => {
             {videos.map((video) => (
               <div
                 key={video.id}
-                onClick={() => handleVideoClick(video.title, video.url)}
+                onClick={() => handleVideoClick(video)}
                 className="bg-card rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow cursor-pointer group"
               >
                 {/* Video Thumbnail */}
@@ -118,7 +131,7 @@ const DynamicFeaturedContent = ({ guest }: DynamicFeaturedContentProps) => {
         </div>
       </section>
 
-      {/* Video Modal */}
+      {/* Single Video Modal */}
       <Dialog open={!!activeVideo} onOpenChange={() => setActiveVideo(null)}>
         <DialogContent className="max-w-4xl p-0 overflow-hidden">
           <DialogHeader className="p-4 pb-0">
@@ -135,6 +148,59 @@ const DynamicFeaturedContent = ({ guest }: DynamicFeaturedContentProps) => {
               />
             )}
           </div>
+        </DialogContent>
+      </Dialog>
+
+      {/* Highlights Grid Modal */}
+      <Dialog open={showHighlightsModal} onOpenChange={(open) => {
+        setShowHighlightsModal(open);
+        if (!open) setActiveHighlight(null);
+      }}>
+        <DialogContent className="max-w-5xl max-h-[90vh] overflow-y-auto">
+          <DialogHeader>
+            <DialogTitle>Highlights</DialogTitle>
+          </DialogHeader>
+          
+          {activeHighlight ? (
+            <div className="space-y-4">
+              <button
+                onClick={() => setActiveHighlight(null)}
+                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+              >
+                ← Back to all highlights
+              </button>
+              <div className="aspect-video w-full">
+                <iframe
+                  src={getEmbedUrl(activeHighlight)}
+                  title="Highlight"
+                  className="w-full h-full border-0 rounded-lg"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              </div>
+            </div>
+          ) : (
+            <div className="grid grid-cols-3 gap-4">
+              {guest.highlights.map((url, index) => (
+                <div
+                  key={index}
+                  onClick={() => handleHighlightClick(url)}
+                  className="aspect-video relative rounded-lg overflow-hidden cursor-pointer group bg-muted"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center">
+                    <div className="text-center">
+                      <div className="w-12 h-12 rounded-full bg-white/90 flex items-center justify-center mx-auto group-hover:scale-110 transition-transform shadow-lg">
+                        <Play className="w-5 h-5 text-[hsl(var(--cyber-pink))] ml-0.5" fill="currentColor" />
+                      </div>
+                      <span className="text-sm font-medium text-foreground mt-2 block">
+                        Highlight {index + 1}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
         </DialogContent>
       </Dialog>
     </>
