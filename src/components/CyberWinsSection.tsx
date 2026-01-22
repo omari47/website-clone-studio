@@ -9,7 +9,7 @@ const CyberWinsSection = ({ summary }: CyberWinsSectionProps) => {
         <div className="max-w-4xl mx-auto text-center">
           {/* Cyber Wins Header */}
           <h2 className="text-4xl lg:text-5xl font-bold italic mb-8">
-            <span className="text-foreground">Cyber </span>
+            <span className="text-cyber-purple">Cyber </span>
             <span className="gradient-text-orange">Wins</span>
           </h2>
           
