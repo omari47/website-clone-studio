@@ -21,9 +21,17 @@ const DynamicHeroSection = ({ guest }: DynamicHeroSectionProps) => {
           <h1 className="text-5xl lg:text-7xl font-bold italic gradient-text mb-4">
             {guest.name}
           </h1>
-          <p className="text-lg lg:text-xl gradient-text-orange font-medium max-w-2xl">
+          <p className="text-lg lg:text-xl gradient-text-orange font-medium max-w-2xl mb-8">
             {guest.title}
           </p>
+          
+          {/* Guest Summary */}
+          <div 
+            className="text-muted-foreground text-base lg:text-lg max-w-3xl leading-relaxed"
+            style={{ whiteSpace: 'pre-wrap' }}
+          >
+            {guest.summary || 'Summary coming soon...'}
+          </div>
         </div>
       </div>
 
