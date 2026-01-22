@@ -56,9 +56,15 @@ const DynamicChatWidget = ({ webhookUrl, guestName }: DynamicChatWidgetProps) =>
       });
 
       const data = await response.json();
+      console.log("Webhook response:", data);
       
       // Extract the output field from the JSON response
-      const outputText = data.output || data.message || data.response || JSON.stringify(data);
+      let outputText = data.output || data.message || data.response || JSON.stringify(data);
+      
+      // Convert escaped newlines to actual newlines
+      if (typeof outputText === 'string') {
+        outputText = outputText.replace(/\\n/g, '\n');
+      }
       
       const assistantMessage: Message = {
         id: (Date.now() + 1).toString(),
