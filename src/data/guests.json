@@ -87,6 +87,38 @@
         "https://drive.google.com/file/d/1btI6cyrI_5g7JA4vWpcIc_Qv693ng4M8/preview"
       ],
       "chatbotWebhook": "https://automations.manymangoes.com.au/webhook/0a93fe37-6aef-4c38-b3ec-d41d56fd79cc/chat"
+    },
+    {
+      "id": "Joe-Orlandoa",
+      "name": "Joe Orlandoa",
+      "title": "Cybersecurity Expert | Notable authority in incident response planning and data protection strategies.",
+      "profilePic": "https://drive.google.com/file/d/1WxM3jhTfI4yRCMrcyEbo6r8pBN-HSOnd/view?usp=drive_link",
+      "summary": "In this engaging discussion, Joe Orlando shares his extensive expertise in the cybersecurity industry, reflecting on significant advancements and the importance of proactive incident response planning. He highlights the evolution of cybersecurity from basic data encryption to complex frameworks that incorporate identity management and data protection. Joe emphasizes the critical need for organizations to develop thorough incident response plans that detail communication strategies and individual responsibilities during cybersecurity incidents. He advocates for regular reviews of these plans to adapt to changing technologies and personnel, underscoring that proactive preparation is essential for minimizing damage during a breach. Joe's insights serve as a guide for organizations to navigate the complexities of cybersecurity, ultimately fostering a culture of awareness and vigilance in protecting sensitive data.",
+      "fullInterview": "https://drive.google.com/file/d/1LmkkHLQaIlWWRj0VfELn0IGR6fal04SW/view?usp=drive_link",
+      "introVideo": "https://drive.google.com/file/d/1iUcOV371AWJbPN3uAAbAydt4Guu5KMku/view?usp=drive_link",
+      "highlights": [
+        "https://drive.google.com/open?id=1XqZDWYimMkAocJySQGGLwWBi37dr4Zq4&usp=drive_copy",
+        "https://drive.google.com/open?id=1SZAlNbuKo8vnLBrDK5eiY-KtHaIOhHWu&usp=drive_copy",
+        "https://drive.google.com/open?id=122U7fCOtZ22h3Grs0F3XqKXQk3ttfOTM&usp=drive_copy",
+        "https://drive.google.com/open?id=135RnamZTbat-XDuzpFTTHas2RofNmzro&usp=drive_copy",
+        "https://drive.google.com/open?id=12bCj7yhiKaI9-Rx_f1Uv3XsgA4HrPBQl&usp=drive_copy",
+        "https://drive.google.com/open?id=19yoKmEH6_oc1cc9YAuZ8adBtnLFMNJvK&usp=drive_copy",
+        "https://drive.google.com/open?id=14a3eAG7yNl_cw-1ac2cM6hKjqwthdH64&usp=drive_copy",
+        "https://drive.google.com/open?id=1SLZtg-pCLnfbFMNAcjsD-H2Wdv37oMe_&usp=drive_copy",
+        "https://drive.google.com/open?id=1PINQ1--1C7Qx4GZoQ8c-3ozJIV1fF9qC&usp=drive_copy",
+        "https://drive.google.com/open?id=1kxkE3-SccQfEatk9saGoqo7pFg7oUphO&usp=drive_copy",
+        "https://drive.google.com/open?id=1u3c3x-NywM0Cp0j1LrPkZK4dkwNDtj2P&usp=drive_copy",
+        "https://drive.google.com/open?id=1oWlViaYXa_eHHzv5VhbaFIpZ8MUYOKRk&usp=drive_copy",
+        "https://drive.google.com/open?id=1TlAiqfq_dovEGDOW7glwyAHcMbL_OVOa&usp=drive_copy",
+        "https://drive.google.com/open?id=1CM4TDszK8-8fiEw8dwq4TV-ILXayhEvK&usp=drive_copy",
+        "https://drive.google.com/open?id=1R4_9tUmMfN_UkMpq3xfPCrb8t16JiLv6&usp=drive_copy",
+        "https://drive.google.com/open?id=1iSmHS-ycsZUwPqpW3YPf8lM4FeKtg9mY&usp=drive_copy",
+        "https://drive.google.com/open?id=1iixl5GNkfvyHaN-Pa_vIFyCIbFIaaDKo&usp=drive_copy",
+        "https://drive.google.com/open?id=1dg_AW-beh3e-MLZQBS7VhZWJAptwXFf0&usp=drive_copy",
+        "https://drive.google.com/open?id=1kjWwVe3Y4BVSL7HovJzDuW_QuA_OmNtZ&usp=drive_copy",
+        "https://drive.google.com/open?id=17a-UQYGyJ_bMhm6A8IVKgHHBvaMbmGA1&usp=drive_copy"
+      ],
+      "chatbotWebhook": "https://automations.manymangoes.com.au/webhook/a88987e4-9cd6-4dc9-8af0-c4190d7e7bd0/chat"
     }
   ]
 }
