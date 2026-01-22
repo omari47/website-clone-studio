@@ -2,6 +2,7 @@ import { useParams, Link } from "react-router-dom";
 import guestsData from "@/data/guests.json";
 import type { Guest, GuestsData } from "@/types/guest";
 import DynamicHeroSection from "@/components/DynamicHeroSection";
+import CyberWinsSection from "@/components/CyberWinsSection";
 import DynamicFeaturedContent from "@/components/DynamicFeaturedContent";
 import AboutSection from "@/components/AboutSection";
 import GetInvolvedSection from "@/components/GetInvolvedSection";
@@ -46,6 +47,7 @@ const GuestProfile = () => {
   return (
     <div className="min-h-screen">
       <DynamicHeroSection guest={guest} />
+      <CyberWinsSection summary={guest.summary} />
       <DynamicFeaturedContent guest={guest} />
       <AboutSection />
       <GetInvolvedSection />
