@@ -12,9 +12,10 @@ interface Message {
 interface DynamicChatWidgetProps {
   webhookUrl: string;
   guestName: string;
+  guestId: string;
 }
 
-const DynamicChatWidget = ({ webhookUrl, guestName }: DynamicChatWidgetProps) => {
+const DynamicChatWidget = ({ webhookUrl, guestName, guestId }: DynamicChatWidgetProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState("");
@@ -44,6 +45,10 @@ const DynamicChatWidget = ({ webhookUrl, guestName }: DynamicChatWidgetProps) =>
     setIsLoading(true);
 
     try {
+      // Create abort controller for timeout
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 30000); // 30 second timeout
+
       const response = await fetch(webhookUrl, {
         method: "POST",
         headers: {
@@ -52,16 +57,21 @@ const DynamicChatWidget = ({ webhookUrl, guestName }: DynamicChatWidgetProps) =>
         body: JSON.stringify({
           message: userMessage.content,
           sessionId: sessionId,
+          guestName: guestName,
+          guestId: guestId,
         }),
+        signal: controller.signal,
       });
+
+      clearTimeout(timeoutId);
 
       const data = await response.json();
       console.log("Webhook response:", data);
       
-      // Extract the output field from the JSON response
-      let outputText = data.output || data.message || data.response || JSON.stringify(data);
+      // Strict parsing: only accept data.output, no JSON.stringify fallback
+      let outputText = data.output || "I encountered an error processing the response.";
       
-      // Convert escaped newlines to actual newlines
+      // Convert escaped newlines to actual newlines for proper formatting
       if (typeof outputText === 'string') {
         outputText = outputText.replace(/\\n/g, '\n');
       }
@@ -75,10 +85,13 @@ const DynamicChatWidget = ({ webhookUrl, guestName }: DynamicChatWidgetProps) =>
       setMessages((prev) => [...prev, assistantMessage]);
     } catch (error) {
       console.error("Chat error:", error);
+      const isTimeout = error instanceof Error && error.name === 'AbortError';
       const errorMessage: Message = {
         id: (Date.now() + 1).toString(),
         role: "assistant",
-        content: "Sorry, there was an error connecting to the chat service.",
+        content: isTimeout 
+          ? "The request timed out. Please try again."
+          : "Sorry, there was an error connecting to the chat service.",
       };
       setMessages((prev) => [...prev, errorMessage]);
     } finally {
