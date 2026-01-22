@@ -13,38 +13,35 @@
         "https://drive.google.com/file/d/EXAMPLE_HIGHLIGHT_2/preview"
       ],
       "chatbotWebhook": "https://automations.manymangoes.com.au/webhook/fbcd4e83-8de6-443c-854c-d11cef35e593/chat"
+    },
+    {
+      "id": "sonyalaw",
+      "name": "Sonya Law",
+      "profilePic": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&auto=format&fit=crop",
+      "summary": "Sonya Law discusses her journey and key victories in the cybersecurity landscape, offering deep insights into leadership and digital protection strategies.",
+      "fullInterview": "https://drive.google.com/file/d/1sNkpU4x0Fs6pzTn0XQSoeSHSmoynwvx8/preview",
+      "introVideo": "https://drive.google.com/file/d/1wTU5yxS_sjNu_EUrZqL4M4SCN6xpr8G8/preview",
+      "highlights": [
+        "https://drive.google.com/file/d/1TnkKY4bKDaedWPmFHBopu8GiqwmDjxRO/preview",
+        "https://drive.google.com/file/d/16OwPYE6mXk-ZtgBmsFv4VULG3EINZAA6/preview",
+        "https://drive.google.com/file/d/1Gk8925D0lZBpT4zOWg6uQ3uDs39q1TC2/preview",
+        "https://drive.google.com/file/d/1iK69CW5ipWVqpPZMGzAN5m4GOY13bJQ0/preview",
+        "https://drive.google.com/file/d/1zL9HP4Ars9cbDz8mZenIJW1q-d1uAgDh/preview",
+        "https://drive.google.com/file/d/1rt3Nuqf2WoBgc9ekApbMhNXG9vBT7x4L/preview",
+        "https://drive.google.com/file/d/1bM_EZ2ylDs0-jwmt2XR4FcCTuXhrlDEg/preview",
+        "https://drive.google.com/file/d/1GpP0GfVS_Pc5bLkxTe85MZB-vK5luDMK/preview",
+        "https://drive.google.com/file/d/1Fry7jWZAraRFTo5Q4B2VsPChO_xM6QdC/preview",
+        "https://drive.google.com/file/d/1YfY_RN5vYdb_mzCJ96HAj-fcA9tF5s1Y/preview",
+        "https://drive.google.com/file/d/13DVKH2GVx40GdXXIrEDobJwFX6nn_8zc/preview",
+        "https://drive.google.com/file/d/15_vBV_Dp28S4wLGDAArtLsROKAkgq6Rj/preview",
+        "https://drive.google.com/file/d/1k36L5ZDTpxgsdbaBAnsjQLbU1oTIjhjY/preview",
+        "https://drive.google.com/file/d/1p1g1gxkMEaKU2iWjL0kal7AyTVd3BCFi/preview",
+        "https://drive.google.com/file/d/1_Z-PdFGFxCU8lAB3GYK0IDAO7YCy-bst/preview",
+        "https://drive.google.com/file/d/1QsPJ1aIFER-EAy330DXJXaOSnRMOtZgr/preview",
+        "https://drive.google.com/file/d/1fL1vs9uBT9dDnh5SAqN5D2L1lrAzswDw/preview",
+        "https://drive.google.com/file/d/1kKWa3HoEJDnSMQisiBXMQ3EQ99l-Chub/preview"
+      ],
+      "chatbotWebhook": "https://automations.manymangoes.com.au/webhook/fbcd4e83-8de6-443c-854c-d11cef35e593/chat"
     }
   ]
 }
-
-
-  {
-    "id": "sonyalaw",
-    "name": "Sonya Law",
-    "profilePic": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&auto=format&fit=crop",
-    "summary": "Sonya Law discusses her journey and key victories in the cybersecurity landscape, offering deep insights into leadership and digital protection strategies.",
-    "fullInterview": "https://drive.google.com/file/d/1sNkpU4x0Fs6pzTn0XQSoeSHSmoynwvx8/preview",
-    "introVideo": "https://drive.google.com/file/d/1wTU5yxS_sjNu_EUrZqL4M4SCN6xpr8G8/preview",
-    "highlights": [
-      "https://drive.google.com/file/d/1TnkKY4bKDaedWPmFHBopu8GiqwmDjxRO/preview",
-      "https://drive.google.com/file/d/16OwPYE6mXk-ZtgBmsFv4VULG3EINZAA6/preview",
-      "https://drive.google.com/file/d/1Gk8925D0lZBpT4zOWg6uQ3uDs39q1TC2/preview",
-      "https://drive.google.com/file/d/1iK69CW5ipWVqpPZMGzAN5m4GOY13bJQ0/preview",
-      "https://drive.google.com/file/d/1zL9HP4Ars9cbDz8mZenIJW1q-d1uAgDh/preview",
-      "https://drive.google.com/file/d/1rt3Nuqf2WoBgc9ekApbMhNXG9vBT7x4L/preview",
-      "https://drive.google.com/file/d/1bM_EZ2ylDs0-jwmt2XR4FcCTuXhrlDEg/preview",
-      "https://drive.google.com/file/d/1GpP0GfVS_Pc5bLkxTe85MZB-vK5luDMK/preview",
-      "https://drive.google.com/file/d/1Fry7jWZAraRFTo5Q4B2VsPChO_xM6QdC/preview",
-      "https://drive.google.com/file/d/1YfY_RN5vYdb_mzCJ96HAj-fcA9tF5s1Y/preview",
-      "https://drive.google.com/file/d/13DVKH2GVx40GdXXIrEDobJwFX6nn_8zc/preview",
-      "https://drive.google.com/file/d/15_vBV_Dp28S4wLGDAArtLsROKAkgq6Rj/preview",
-      "https://drive.google.com/file/d/1k36L5ZDTpxgsdbaBAnsjQLbU1oTIjhjY/preview",
-      "https://drive.google.com/file/d/1p1g1gxkMEaKU2iWjL0kal7AyTVd3BCFi/preview",
-      "https://drive.google.com/file/d/1_Z-PdFGFxCU8lAB3GYK0IDAO7YCy-bst/preview",
-      "https://drive.google.com/file/d/1QsPJ1aIFER-EAy330DXJXaOSnRMOtZgr/preview",
-      "https://drive.google.com/file/d/1fL1vs9uBT9dDnh5SAqN5D2L1lrAzswDw/preview",
-      "https://drive.google.com/file/d/1kKWa3HoEJDnSMQisiBXMQ3EQ99l-Chub/preview"
-    ],
-    "chatbotWebhook": "https://automations.manymangoes.com.au/webhook/fbcd4e83-8de6-443c-854c-d11cef35e593/chat"
-  }
-
