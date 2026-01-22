@@ -1,6 +1,6 @@
 import { useState } from "react";
 import type { Guest } from "@/types/guest";
-import { Play, X } from "lucide-react";
+import { Play, Download } from "lucide-react";
 import fullInterviewImg from "@/assets/full-interview.png";
 import introductionImg from "@/assets/introduction.png";
 import highlightsImg from "@/assets/highlights.png";
@@ -175,7 +175,8 @@ const DynamicFeaturedContent = ({ guest }: DynamicFeaturedContentProps) => {
               <div key={index} className="space-y-2">
                 <p className="text-sm font-medium text-center text-foreground">Highlight {index + 1}</p>
                 <div
-                  className="aspect-video relative rounded-lg overflow-hidden bg-muted"
+                  className="relative rounded-lg overflow-hidden bg-muted"
+                  style={{ aspectRatio: '1/2' }}
                 >
                   {playingHighlights.has(index) ? (
                     <iframe
@@ -203,6 +204,15 @@ const DynamicFeaturedContent = ({ guest }: DynamicFeaturedContentProps) => {
                     </div>
                   )}
                 </div>
+                <a
+                  href={url.includes('/preview') ? url.replace('/preview', '/view') : url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 w-full py-2 px-3 bg-primary/10 hover:bg-primary/20 text-primary rounded-lg text-sm font-medium transition-colors"
+                >
+                  <Download className="w-4 h-4" />
+                  Download
+                </a>
               </div>
             ))}
           </div>
