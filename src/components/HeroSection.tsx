@@ -1,4 +1,4 @@
-import { Mic } from "lucide-react";
+import ChatWidget from "./ChatWidget";
 
 const HeroSection = () => {
   return (
@@ -22,12 +22,8 @@ const HeroSection = () => {
         </div>
       </div>
 
-      {/* Floating Mic Button */}
-      <div className="fixed bottom-8 right-8 z-50">
-        <button className="w-14 h-14 rounded-full bg-primary text-primary-foreground shadow-lg hover:shadow-xl transition-shadow flex items-center justify-center">
-          <Mic className="w-6 h-6" />
-        </button>
-      </div>
+      {/* Chat Widget */}
+      <ChatWidget />
     </section>
   );
 };
