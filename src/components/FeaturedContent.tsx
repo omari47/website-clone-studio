@@ -1,20 +1,26 @@
 import { Play } from "lucide-react";
+import fullInterviewImg from "@/assets/full-interview.png";
+import introductionImg from "@/assets/introduction.png";
+import highlightsImg from "@/assets/highlights.png";
 
 const videos = [
   {
     id: 1,
     title: "Full Interview",
-    description: "Complete conversation with Mike D'Arezzo",
+    description: "Complete conversation with Dan Wilkins",
+    thumbnail: fullInterviewImg,
   },
   {
     id: 2,
     title: "Introduction",
-    description: "Meet Mike D'Arezzo",
+    description: "Meet Dan Wilkins",
+    thumbnail: introductionImg,
   },
   {
     id: 3,
-    title: "Highlight Reel",
+    title: "Highlights",
     description: "Best moments from the interview",
+    thumbnail: highlightsImg,
   },
 ];
 
@@ -34,10 +40,17 @@ const FeaturedContent = () => {
               className="bg-card rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow cursor-pointer group"
             >
               {/* Video Thumbnail */}
-              <div className="gradient-card aspect-video flex items-center justify-center relative">
-                <button className="w-16 h-16 rounded-full bg-white/90 flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg">
-                  <Play className="w-6 h-6 text-[hsl(var(--cyber-pink))] ml-1" fill="currentColor" />
-                </button>
+              <div className="aspect-video relative overflow-hidden">
+                <img 
+                  src={video.thumbnail} 
+                  alt={video.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
+                  <button className="w-16 h-16 rounded-full bg-white/90 flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg">
+                    <Play className="w-6 h-6 text-[hsl(var(--cyber-pink))] ml-1" fill="currentColor" />
+                  </button>
+                </div>
               </div>
 
               {/* Video Info */}
