@@ -170,46 +170,44 @@ const FeaturedContent = () => {
             <DialogTitle>Highlights</DialogTitle>
           </DialogHeader>
           
-          {activeHighlight ? (
-            <div className="space-y-4">
-              <button
-                onClick={() => setActiveHighlight(null)}
-                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-              >
-                ← Back to all highlights
-              </button>
-              <div className="aspect-video w-full">
-                <iframe
-                  src={getEmbedUrl(activeHighlight)}
-                  title="Highlight"
-                  className="w-full h-full border-0 rounded-lg"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                />
-              </div>
+          <div className="space-y-4">
+            {/* Video Player */}
+            <div className="aspect-video w-full bg-muted rounded-lg overflow-hidden">
+              <iframe
+                src={getEmbedUrl(activeHighlight || defaultVideoUrls.highlights[0])}
+                title="Highlight"
+                className="w-full h-full border-0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
             </div>
-          ) : (
-            <div className="grid grid-cols-3 gap-4">
+
+            {/* Highlights Grid */}
+            <div className="grid grid-cols-3 gap-3">
               {defaultVideoUrls.highlights.map((url, index) => (
                 <div
                   key={index}
-                  onClick={() => handleHighlightClick(url, index)}
-                  className="aspect-video relative rounded-lg overflow-hidden cursor-pointer group bg-muted"
+                  onClick={() => setActiveHighlight(url)}
+                  className={`aspect-video relative rounded-lg overflow-hidden cursor-pointer group bg-muted transition-all ${
+                    (activeHighlight || defaultVideoUrls.highlights[0]) === url 
+                      ? "ring-2 ring-primary" 
+                      : "hover:ring-2 hover:ring-primary/50"
+                  }`}
                 >
                   <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center">
                     <div className="text-center">
-                      <div className="w-12 h-12 rounded-full bg-white/90 flex items-center justify-center mx-auto group-hover:scale-110 transition-transform shadow-lg">
-                        <Play className="w-5 h-5 text-[hsl(var(--cyber-pink))] ml-0.5" fill="currentColor" />
+                      <div className="w-8 h-8 rounded-full bg-white/90 flex items-center justify-center mx-auto group-hover:scale-110 transition-transform shadow-lg">
+                        <Play className="w-3 h-3 text-[hsl(var(--cyber-pink))] ml-0.5" fill="currentColor" />
                       </div>
-                      <span className="text-sm font-medium text-foreground mt-2 block">
-                        Highlight {index + 1}
+                      <span className="text-xs font-medium text-foreground mt-1 block">
+                        {index + 1}
                       </span>
                     </div>
                   </div>
                 </div>
               ))}
             </div>
-          )}
+          </div>
         </DialogContent>
       </Dialog>
     </>
