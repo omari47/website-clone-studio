@@ -55,7 +55,7 @@ const DynamicChatWidget = ({ webhookUrl, guestName, guestId }: DynamicChatWidget
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          message: userMessage.content,
+          chatInput: userMessage.content,
           sessionId: sessionId,
           guestName: guestName,
           guestId: guestId,
@@ -67,15 +67,15 @@ const DynamicChatWidget = ({ webhookUrl, guestName, guestId }: DynamicChatWidget
 
       const data = await response.json();
       console.log("Webhook response:", data);
-      
+
       // Strict parsing: only accept data.output, no JSON.stringify fallback
       let outputText = data.output || "I encountered an error processing the response.";
-      
+
       // Convert escaped newlines to actual newlines for proper formatting
-      if (typeof outputText === 'string') {
-        outputText = outputText.replace(/\\n/g, '\n');
+      if (typeof outputText === "string") {
+        outputText = outputText.replace(/\\n/g, "\n");
       }
-      
+
       const assistantMessage: Message = {
         id: (Date.now() + 1).toString(),
         role: "assistant",
@@ -85,11 +85,11 @@ const DynamicChatWidget = ({ webhookUrl, guestName, guestId }: DynamicChatWidget
       setMessages((prev) => [...prev, assistantMessage]);
     } catch (error) {
       console.error("Chat error:", error);
-      const isTimeout = error instanceof Error && error.name === 'AbortError';
+      const isTimeout = error instanceof Error && error.name === "AbortError";
       const errorMessage: Message = {
         id: (Date.now() + 1).toString(),
         role: "assistant",
-        content: isTimeout 
+        content: isTimeout
           ? "The request timed out. Please try again."
           : "Sorry, there was an error connecting to the chat service.",
       };
@@ -114,18 +114,13 @@ const DynamicChatWidget = ({ webhookUrl, guestName, guestId }: DynamicChatWidget
           {/* Header */}
           <div className="gradient-card p-4 flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center text-xl">
-                👋
-              </div>
+              <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center text-xl">👋</div>
               <div>
                 <h3 className="font-semibold text-white">Cyber Wins Assistant</h3>
                 <p className="text-white/80 text-sm">Ready to Score Your Next Win?</p>
               </div>
             </div>
-            <button
-              onClick={() => setIsOpen(false)}
-              className="text-white/80 hover:text-white transition-colors"
-            >
+            <button onClick={() => setIsOpen(false)} className="text-white/80 hover:text-white transition-colors">
               <X className="w-5 h-5" />
             </button>
           </div>
@@ -139,10 +134,7 @@ const DynamicChatWidget = ({ webhookUrl, guestName, guestId }: DynamicChatWidget
               </div>
             )}
             {messages.map((message) => (
-              <div
-                key={message.id}
-                className={`flex ${message.role === "user" ? "justify-end" : "justify-start"}`}
-              >
+              <div key={message.id} className={`flex ${message.role === "user" ? "justify-end" : "justify-start"}`}>
                 <div
                   className={`max-w-[80%] rounded-2xl px-4 py-2 ${
                     message.role === "user"
@@ -193,11 +185,7 @@ const DynamicChatWidget = ({ webhookUrl, guestName, guestId }: DynamicChatWidget
         onClick={() => setIsOpen(!isOpen)}
         className="w-14 h-14 rounded-full gradient-card text-white shadow-lg hover:shadow-xl transition-all hover:scale-105 flex items-center justify-center"
       >
-        {isOpen ? (
-          <X className="w-6 h-6" />
-        ) : (
-          <MessageCircle className="w-6 h-6" />
-        )}
+        {isOpen ? <X className="w-6 h-6" /> : <MessageCircle className="w-6 h-6" />}
       </button>
     </div>
   );
