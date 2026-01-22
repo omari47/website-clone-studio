@@ -28,7 +28,7 @@ const DynamicHeroSection = ({ guest }: DynamicHeroSectionProps) => {
       </div>
 
       {/* Chat Widget with guest-specific webhook */}
-      <DynamicChatWidget webhookUrl={guest.chatbotWebhook} guestName={guest.name} />
+      <DynamicChatWidget webhookUrl={guest.chatbotWebhook} guestName={guest.name} guestId={guest.id} />
     </section>
   );
 };
