@@ -2,17 +2,33 @@
   "guests": [
     {
       "id": "dan-wilkins",
-      "name": "Amos Wilkins",
+      "name": "Dan Wilkins",
       "title": "CISO | Trusted advisor in cybersecurity strategy and risk management",
-      "profilePic": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face",
-      "summary": "Dan Wilkins shares his journey as a CISO and the strategies that have led to major cybersecurity wins in his career.",
-      "fullInterview": "https://drive.google.com/file/d/EXAMPLE_FULL_INTERVIEW_ID/preview",
-      "introVideo": "https://drive.google.com/file/d/EXAMPLE_INTRO_ID/preview",
+      "profilePic": "https://drive.google.com/file/d/1JOK9z_5VCMPp-GK6XjdkMCuYvs6Gf-NB/view?usp=drive_link",
+      "summary": "In this engaging discussion, cybersecurity expert Dan Wilkins highlights his extensive experience in the field, emphasizing key 'Cyber Wins' that organizations can achieve despite the challenges posed by limited budgets and evolving regulations. With over 25 years in cybersecurity, Dan underscores the importance of innovation within existing constraints, focusing on utilizing available technology and resources to manage risks effectively. He shares insights on understanding normal versus abnormal behavior in data security, advocating for informed decision-making grounded in solid data analysis. Dan reflects on the necessity of clear communication in cybersecurity, illustrating how aligning business objectives with security measures fosters trust and positions cybersecurity as a strategic advantage. Ultimately, he encourages organizations to think critically about their risk management strategies and to recognize that not every system needs to be modernized, advocating for a balanced approach to technology investment.",
+      "fullInterview": "https://drive.google.com/file/d/1hLZSe3pMs9i3jjMCyMFkppl5XsS4XEll/view?usp=drive_link",
+      "introVideo": "https://drive.google.com/file/d/1uwIbSVEta8oUGUupJsZuWjua5Uj5MM9b/view?usp=drive_link",
       "highlights": [
-        "https://drive.google.com/file/d/EXAMPLE_HIGHLIGHT_1/preview",
-        "https://drive.google.com/file/d/EXAMPLE_HIGHLIGHT_2/preview"
-      ],
-      "chatbotWebhook": "https://automations.manymangoes.com.au/webhook/fbcd4e83-8de6-443c-854c-d11cef35e593/chat"
+    "https://drive.google.com/file/d/1f6-eIdOCawuOb2995CQ_WcvuPpUSIO0L/preview",
+    "https://drive.google.com/file/d/1k-duzCIpMunkbdfBmY28xcPZxmn-Rx6Z/preview",
+    "https://drive.google.com/file/d/1588IWFAA3_jpnj0SmcM5Fco5wTM2BCXw/preview",
+    "https://drive.google.com/file/d/1KmqisrpI_IQ4jCGS4AAz3aPEsi0NgBHH/preview",
+    "https://drive.google.com/file/d/1Lh-Ou9zUidcXmP2cwFg5v1Lf9VhCkh9C/preview",
+    "https://drive.google.com/file/d/10YRE7fXXhWvpJ0c1XFaxWg7zyGg3I2PD/preview",
+    "https://drive.google.com/file/d/18Rzc6sq7q3cHzccDCdXusudRj7NTw5Fi/preview",
+    "https://drive.google.com/file/d/1w8eKNZbgycXCkvyd_Gv1RibO47eZNyMV/preview",
+    "https://drive.google.com/file/d/1BfPfNS-IpdjBbwTTMX1NYiySk97-6938/preview",
+    "https://drive.google.com/file/d/1kdg3e6Ix9a5WLgkimGck0DdcwYB0WD8L/preview",
+    "https://drive.google.com/file/d/1JN5h0PxKk7X6vPzWW3i1hbEQWV2Cy7Ck/preview",
+    "https://drive.google.com/file/d/10fcmaOdqjSShcQdTR4dtK46oM3CYvqbo/preview",
+    "https://drive.google.com/file/d/19TMe4VquUfhuH3JXnusY5dQhg3YNEDvD/preview",
+    "https://drive.google.com/file/d/1HwxHIviXGoaZcwSkHtmAZTEIXxjPyVX6/preview",
+    "https://drive.google.com/file/d/1HUUro8xT-_EN-xxMU1w5_J-pZc50vKCX/preview",
+    "https://drive.google.com/file/d/1nhdui0i6Ch52YvMOGNJWoQKixgUC3fkn/preview"
+  ],
+           
+      
+      "chatbotWebhook": "https://automations.manymangoes.com.au/webhook/321fc110-f6f5-41d2-947f-23b7a4dae437/chat"
     },
     {
       "id": "sonyalaw",
