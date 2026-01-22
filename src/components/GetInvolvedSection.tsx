@@ -17,9 +17,16 @@ const GetInvolvedSection = () => {
           <Button 
             size="lg" 
             className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-8 gap-2"
+            asChild
           >
-            Apply to Be a Guest
-            <ArrowRight className="w-4 h-4" />
+            <a 
+              href="https://docs.google.com/forms/d/e/1FAIpQLSe7QAW-iyyNSDYUHQEzYh0ajiL--K0Y9Sg21YeLalfQhrY1ZA/viewform?usp=send_form" 
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
+              Apply to Be a Guest
+              <ArrowRight className="w-4 h-4" />
+            </a>
           </Button>
           <Button 
             size="lg" 
