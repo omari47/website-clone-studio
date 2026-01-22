@@ -56,6 +56,37 @@
         "https://drive.google.com/file/d/1kKWa3HoEJDnSMQisiBXMQ3EQ99l-Chub/preview"
       ],
       "chatbotWebhook": "https://automations.manymangoes.com.au/webhook/fbcd4e83-8de6-443c-854c-d11cef35e593/chat"
+    },
+    {
+      "id": "wayne-towson",
+      "name": "Wayne Towson",
+      "title": "Cybersecurity Expert | Developed the Loss and Stolen Travel Document Database to enhance international border security systems.",
+      "profilePic": "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=800&auto=format&fit=crop",
+      "summary": "In this episode of the Cyber Wins Podcast, Wayne Toon, a seasoned cybersecurity professional, reflects on his extensive journey in the field since 1991. He shares notable milestones achieved during his tenure at Interpol Washington, where he rose from system administration to management. Wayne highlights significant technical victories, such as implementing one of the first internet-based VPNs for international communications and establishing a robust information exchange system post-9/11 to enhance border security. His work led to the creation of the Loss and Stolen Travel Document Database, allowing for the efficient tracking of potentially fraudulent travel documents. Throughout the discussion, Wayne emphasizes the importance of aligning technology with the mission of the organization, fostering collaboration, and staying curious in an ever-evolving cybersecurity landscape.",
+      "fullInterview": "https://drive.google.com/file/d/1QoMWYulfxUYlbzeLzuXKsNfouNnT-fbT/preview",
+      "introVideo": "https://drive.google.com/file/d/1FkK0iRQ0Y2k_ZGb09rChUQn7P4b_urMC/preview",
+      "highlights": [
+        "https://drive.google.com/file/d/1kp4OGEGZQ3B1iO5Yr08N888X8-HLetNt/preview",
+        "https://drive.google.com/file/d/1QSGZ8yv_0JNHUg8j_HaUJC-Dtvx5IL-f/preview",
+        "https://drive.google.com/file/d/1g2yNJNstrMFSUtdxUJnNAKZ0MbqQLd23/preview",
+        "https://drive.google.com/file/d/1rpO92ZQT96QELm3LkbcgzTi1d0E6aS1_/preview",
+        "https://drive.google.com/file/d/1UovJ1PHV6ULfPfN-eQHwlNJ5gxaKTzTF/preview",
+        "https://drive.google.com/file/d/1HKBenMiNJG6jLsGc6tNSuWIL9pGYgkSn/preview",
+        "https://drive.google.com/file/d/1sh2ZrsB9a3ZJfABgiEm6OqlASsSLDhgY/preview",
+        "https://drive.google.com/file/d/1QDNVxcan8iQmAKuJ38-iZePkB8CE2lDs/preview",
+        "https://drive.google.com/file/d/1F_9qc7LwPn-_shrSRFH2LJs1QbxwM9wc/preview",
+        "https://drive.google.com/file/d/1apQG4UgZz6kEdx4ykUJMCQA5zhlx3Ce2/preview",
+        "https://drive.google.com/file/d/1xUR2FEaLmZs7AKGNTaj_uAKVh75h-nNX/preview",
+        "https://drive.google.com/file/d/1X7P9GVeJQDGnYF0h_dzGLZ3z6BsnxB6z/preview",
+        "https://drive.google.com/file/d/1WgIo-0hCNyUPLJkdaVh9XigQ5SDtCyz2/preview",
+        "https://drive.google.com/file/d/1ARu1JvdGcHav9yVOxe7Rd-0r_BPRjVoJ/preview",
+        "https://drive.google.com/file/d/1C_4NYoOMN0qS6-zWN91LPMxUQftrbM3b/preview",
+        "https://drive.google.com/file/d/1C51U6qWaK6XoEFu6x3abkJCdgLmhALHZ/preview",
+        "https://drive.google.com/file/d/1mDLikzfF0vaxS0Q1PF548WZ8Q7lDUCY3/preview",
+        "https://drive.google.com/file/d/1LT8md8ep137BbYHoAFXTfpRN9Ww5SJij/preview",
+        "https://drive.google.com/file/d/1btI6cyrI_5g7JA4vWpcIc_Qv693ng4M8/preview"
+      ],
+      "chatbotWebhook": "https://automations.manymangoes.com.au/webhook/0a93fe37-6aef-4c38-b3ec-d41d56fd79cc/chat"
     }
   ]
 }
