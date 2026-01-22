@@ -3,6 +3,9 @@ import type { Guest } from "@/types/guest";
 import LazyVideoIframe from "./LazyVideoIframe";
 import { Play, ChevronDown, ChevronUp } from "lucide-react";
 import { Button } from "./ui/button";
+import fullInterviewImg from "@/assets/full-interview.png";
+import introductionImg from "@/assets/introduction.png";
+import highlightsImg from "@/assets/highlights.png";
 
 interface DynamicFeaturedContentProps {
   guest: Guest;
@@ -25,6 +28,7 @@ const DynamicFeaturedContent = ({ guest }: DynamicFeaturedContentProps) => {
             url={guest.fullInterview}
             title="Full Interview"
             description={`Complete conversation with ${guest.name}`}
+            thumbnail={fullInterviewImg}
           />
 
           {/* Introduction Video */}
@@ -32,18 +36,20 @@ const DynamicFeaturedContent = ({ guest }: DynamicFeaturedContentProps) => {
             url={guest.introVideo}
             title="Introduction"
             description={`Meet ${guest.name}`}
+            thumbnail={introductionImg}
           />
 
           {/* Highlights - Single Card Container */}
-          <div className="bg-card rounded-2xl overflow-hidden shadow-lg">
-            <div className="aspect-video relative overflow-hidden bg-muted">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="w-16 h-16 rounded-full bg-white/90 flex items-center justify-center mx-auto mb-3 shadow-lg">
-                    <Play className="w-6 h-6 text-primary ml-1" fill="currentColor" />
-                  </div>
-                  <span className="text-2xl font-bold text-foreground">{guest.highlights.length}</span>
-                  <p className="text-muted-foreground text-sm">Highlight clips</p>
+          <div className="bg-card rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow group">
+            <div className="aspect-video relative overflow-hidden">
+              <img
+                src={highlightsImg}
+                alt="Highlights"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+              />
+              <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
+                <div className="w-16 h-16 rounded-full bg-white/90 flex items-center justify-center shadow-lg">
+                  <Play className="w-6 h-6 text-[hsl(var(--cyber-pink))] ml-1" fill="currentColor" />
                 </div>
               </div>
             </div>
