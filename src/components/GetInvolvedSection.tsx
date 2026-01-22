@@ -20,7 +20,7 @@ const GetInvolvedSection = () => {
             asChild
           >
             <a 
-              href="https://docs.google.com/forms/d/e/1FAIpQLSe7QAW-iyyNSDYUHQEzYh0ajiL--K0Y9Sg21YeLalfQhrY1ZA/viewform?usp=send_form" 
+              href="https://forms.gle/4QZVeeSwfB6BURG77" 
               target="_blank" 
               rel="noopener noreferrer"
             >
