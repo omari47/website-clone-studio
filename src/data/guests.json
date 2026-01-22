@@ -1,0 +1,18 @@
+{
+  "guests": [
+    {
+      "id": "dan-wilkins",
+      "name": "Dan Wilkins",
+      "title": "CISO | Trusted advisor in cybersecurity strategy and risk management",
+      "profilePic": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face",
+      "summary": "Dan Wilkins shares his journey as a CISO and the strategies that have led to major cybersecurity wins in his career.",
+      "fullInterview": "https://drive.google.com/file/d/EXAMPLE_FULL_INTERVIEW_ID/preview",
+      "introVideo": "https://drive.google.com/file/d/EXAMPLE_INTRO_ID/preview",
+      "highlights": [
+        "https://drive.google.com/file/d/EXAMPLE_HIGHLIGHT_1/preview",
+        "https://drive.google.com/file/d/EXAMPLE_HIGHLIGHT_2/preview"
+      ],
+      "chatbotWebhook": "https://automations.manymangoes.com.au/webhook/fbcd4e83-8de6-443c-854c-d11cef35e593/chat"
+    }
+  ]
+}
