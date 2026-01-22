@@ -31,9 +31,16 @@ const GetInvolvedSection = () => {
           <Button 
             size="lg" 
             className="bg-secondary hover:bg-secondary/90 text-secondary-foreground rounded-full px-8 gap-2"
+            asChild
           >
-            <Linkedin className="w-5 h-5" />
-            Connect on LinkedIn
+            <a 
+              href="https://www.linkedin.com/company/exclusive-networks-podcast-series/posts/?feedView=all" 
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
+              <Linkedin className="w-5 h-5" />
+              Connect on LinkedIn
+            </a>
           </Button>
         </div>
       </div>
